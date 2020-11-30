@@ -1,0 +1,26 @@
+<?php
+namespace App\Controller;
+
+use Symfony\Component\HttpFoundation\Response;
+use Twig\Environment;
+
+class homecontroller 
+{
+    /**
+ * @var Environment
+ */
+private $twig;
+ 
+public function __construct(Environment $twig)
+{
+  
+    $this->twig = $twig ; 
+}
+
+
+Public function index():Response
+{
+    return new Response($this->twig->render('pages/home.html.twig'));
+}
+
+}
